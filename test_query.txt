@@ -1,0 +1,29 @@
+Internal, reflection => contains: {$cat1} {$cat2} {$cat3}
+Obsoleto, Checkbox => no
+
+SELECT DISTINCT 
+	`e`.id,
+    `e`.section_id, e.`author_id`,
+	UNIX_TIMESTAMP(e.`creation_date`) AS `creation_date`,
+	UNIX_TIMESTAMP(e.`modification_date`) AS `modification_date`
+FROM `sym_entries` AS `e`
+JOIN sym_entries_data_164 on sym_entries_data_164.`entry_id` = e.`id`
+WHERE 1
+	AND `e`.`section_id` = '16' 
+    AND sym_entries_data_164.`handle` in ('manuale') fgroup by e.`id` having count(distinct sym_entries_data_164.`handle`)=1
+ORDER BY `e`.`id`DESC 
+
+
+
+
+SELECT DISTINCT 
+	e.id,
+    e.section_id, e.author_id, sym_entries_data_76.value
+FROM sym_entries AS e
+JOIN sym_entries_data_164 on sym_entries_data_164.entry_id = e.id
+JOIN sym_entries_data_76 on sym_entries_data_76.entry_id = e.id
+WHERE 1
+	AND e.section_id = '16'
+	AND (select distinct count(*) from sym_entries_data_164
+		where sym_entries_data_164.entry_id = e.id and sym_entries_data_164.handle in ('combinato', 'lavapistole')) = 2
+ORDER BY e.id DESC 

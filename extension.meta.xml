@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="tag_filter" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
+	<name>Tag filter</name>
+	<description>Tag filter</description>
+	<repo type="github"> </repo>
+	<types>
+		<type>Tag filter</type>
+	</types>
+	<authors>
+		<author>
+			<name github="miquik">Michele</name>
+		</author>
+	</authors>
+	<releases>
+		<release version="1.0" date="2019-03-07"  min="2.4" max="2.4" />
+	</releases>
+</extension>
