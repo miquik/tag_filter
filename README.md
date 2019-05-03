@@ -11,7 +11,7 @@ Tag-Cloud like filtering in frontend
 
 Comma separated value of tag 'actions'. A tag-action is defined as `<operator>:<tag>`
 
-Currently 3 operator are defined:
+Currently 3 operators are defined:
 - `a`, add `<tag>` to filter list
 - `r`, remove `<tag>` from filter list
 - `c` (without parameter) clean filter list
